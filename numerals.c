@@ -1,5 +1,6 @@
 
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "numerals.h"
 
@@ -54,4 +55,90 @@ int NumeralToInteger(char* numeral){
 	}
 
 	return value;
+}
+
+
+char* IntegerToNumeral(int integer){
+
+	char *numeral = malloc(sizeof(char)*100);
+	int cursor = 0;
+
+	while(integer > 0){
+
+		if(integer >= 900){
+			if(integer >= 1000){
+				numeral[cursor++] = 'M';
+				integer -= 1000;
+			}
+			else{
+				numeral[cursor++] = 'C';
+				numeral[cursor++] = 'M';
+				integer -= 900;
+			}
+		}
+		else if(integer >= 400){
+			if(integer >= 500){
+				numeral[cursor++] = 'D';
+				integer -= 500;
+			}
+			else{
+				numeral[cursor++] = 'C';
+				numeral[cursor++] = 'D';
+				integer -= 400;
+			}
+		}
+		else if(integer >= 90){
+			if(integer >= 100){
+				numeral[cursor++] = 'C';
+				integer -= 100;
+			}
+			else{
+				numeral[cursor++] = 'X';
+				numeral[cursor++] = 'C';
+				integer -= 90;
+			}
+		}
+		else if(integer >= 40){
+			if(integer >= 50){
+				numeral[cursor++] = 'L';
+				integer -= 50;
+			}
+			else{
+				numeral[cursor++] = 'X';
+				numeral[cursor++] = 'L';
+				integer -= 900;
+			}
+		}
+		else if(integer >= 9){
+			if(integer >= 10){
+				numeral[cursor++] = 'X';
+				integer -= 10;
+			}
+			else{
+				numeral[cursor++] = 'I';
+				numeral[cursor++] = 'X';
+				integer -= 900;
+			}
+		}
+		else if(integer >= 4){
+			if(integer >= 5){
+				numeral[cursor++] = 'V';
+				integer -= 5;
+			}
+			else{
+				numeral[cursor++] = 'I';
+				numeral[cursor++] = 'V';
+				integer -= 4;
+			}
+		}
+		else{
+		
+			numeral[cursor++] = 'I';
+			integer--;
+		}
+	}
+
+	numeral[cursor] = '\0';
+
+	return numeral;
 }
