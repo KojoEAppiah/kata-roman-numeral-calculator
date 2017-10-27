@@ -45,6 +45,13 @@ START_TEST(test_convert_D)
 }
 END_TEST
 
+START_TEST(test_convert_M)
+{
+    ck_assert_int_eq(1000, IntValueOf('M'));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -60,7 +67,8 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_convert_X);
     tcase_add_test(tc_core, test_convert_L);
     tcase_add_test(tc_core, test_convert_C);
-    tcase_add_test(tc_core, test_convert_D);    
+    tcase_add_test(tc_core, test_convert_D);
+    tcase_add_test(tc_core, test_convert_M);
     suite_add_tcase(s, tc_core);
 
     return s;

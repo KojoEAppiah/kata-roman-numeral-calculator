@@ -20,6 +20,8 @@ int IntValueOf(char numeral){
 			return 100;
 		case 'D':
 			return 500;
+		case 'M':
+			return 1000;
 	}
 
 	return 0;
