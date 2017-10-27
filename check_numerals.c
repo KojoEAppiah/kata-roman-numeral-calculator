@@ -76,6 +76,13 @@ START_TEST(test_compute_7)
 }
 END_TEST
 
+START_TEST(test_compute_47)
+{
+    ck_assert_str_eq("XLVII", IntegerToNumeral(47));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -97,6 +104,7 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_compute_VII);
     tcase_add_test(tc_core, test_compute_XLIV);
     tcase_add_test(tc_core, test_compute_7);
+    tcase_add_test(tc_core, test_compute_47);    
     suite_add_tcase(s, tc_core);
 
     return s;

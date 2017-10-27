@@ -106,7 +106,7 @@ char* IntegerToNumeral(int integer){
 			else{
 				numeral[cursor++] = 'X';
 				numeral[cursor++] = 'L';
-				integer -= 900;
+				integer -= 40;
 			}
 		}
 		else if(integer >= 9){
@@ -117,7 +117,7 @@ char* IntegerToNumeral(int integer){
 			else{
 				numeral[cursor++] = 'I';
 				numeral[cursor++] = 'X';
-				integer -= 900;
+				integer -= 90;
 			}
 		}
 		else if(integer >= 4){
