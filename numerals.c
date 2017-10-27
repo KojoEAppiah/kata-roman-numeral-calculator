@@ -16,6 +16,8 @@ int IntValueOf(char numeral){
 			return 10;
 		case 'L':
 			return 50;
+		case 'C':
+			return 100;
 	}
 
 	return 0;
