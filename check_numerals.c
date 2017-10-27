@@ -98,6 +98,13 @@ START_TEST(test_addition_24_438)
 }
 END_TEST
 
+START_TEST(test_subtraction_3452_1118)
+{
+    ck_assert_str_eq("MMCCCXXXIV", NumeralSubtract("MMMCDLII", "MCXVIII"));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -123,6 +130,7 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_compute_2439);
 
     tcase_add_test(tc_core, test_addition_24_438);
+    tcase_add_test(tc_core, test_subtraction_3452_1118);
     suite_add_tcase(s, tc_core);
 
     return s;

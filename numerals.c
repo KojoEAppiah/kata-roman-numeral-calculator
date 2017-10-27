@@ -147,3 +147,8 @@ char* NumeralAdd(char* numeral1, char* numeral2){
 
 	return IntegerToNumeral(NumeralToInteger(numeral1) + NumeralToInteger(numeral2));
 }
+
+char* NumeralSubtract(char* numeral1, char* numeral2){
+
+	return IntegerToNumeral( abs(NumeralToInteger(numeral1) - NumeralToInteger(numeral2)) );
+}
