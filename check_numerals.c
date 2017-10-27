@@ -90,6 +90,14 @@ START_TEST(test_compute_2439)
 }
 END_TEST
 
+
+START_TEST(test_addition_24_438)
+{
+    ck_assert_str_eq("CDLXII", NumeralAdd("XXIV", "CDXXXVIII"));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -113,6 +121,8 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_compute_7);
     tcase_add_test(tc_core, test_compute_47);
     tcase_add_test(tc_core, test_compute_2439);
+
+    tcase_add_test(tc_core, test_addition_24_438);
     suite_add_tcase(s, tc_core);
 
     return s;

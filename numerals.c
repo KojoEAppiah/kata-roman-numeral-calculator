@@ -142,3 +142,8 @@ char* IntegerToNumeral(int integer){
 
 	return numeral;
 }
+
+char* NumeralAdd(char* numeral1, char* numeral2){
+
+	return IntegerToNumeral(NumeralToInteger(numeral1) + NumeralToInteger(numeral2));
+}
