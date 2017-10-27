@@ -3,6 +3,9 @@
 
 #include "numerals.h"
 
+
+// CONVERSION TESTS
+
 START_TEST(test_convert_I)
 {
     ck_assert_int_eq(1, IntValueOf('I'));
@@ -52,6 +55,20 @@ START_TEST(test_convert_M)
 }
 END_TEST
 
+START_TEST(test_compute_VII)
+{
+    ck_assert_int_eq(7, NumeralToInteger("VII"));
+ 
+}
+END_TEST
+
+START_TEST(test_compute_XLIV)
+{
+    ck_assert_int_eq(44, NumeralToInteger("XLIV"));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -69,6 +86,9 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_convert_C);
     tcase_add_test(tc_core, test_convert_D);
     tcase_add_test(tc_core, test_convert_M);
+
+    tcase_add_test(tc_core, test_compute_VII);
+    tcase_add_test(tc_core, test_compute_XLIV);    
     suite_add_tcase(s, tc_core);
 
     return s;

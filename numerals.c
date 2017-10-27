@@ -26,3 +26,32 @@ int IntValueOf(char numeral){
 
 	return 0;
 }
+
+
+int NumeralToInteger(char* numeral){
+
+	int numeral_length = strlen(numeral);
+	int cursor = numeral_length - 1;
+	int value = 0;
+	int subtract = 0;
+
+	while(cursor >= 0){
+		if(cursor == numeral_length-1){
+			value += IntValueOf(numeral[cursor]);
+		}
+		else{
+			if(IntValueOf(numeral[cursor]) < IntValueOf(numeral[cursor+1])){
+				subtract = 1;
+			}
+			if(IntValueOf(numeral[cursor]) > IntValueOf(numeral[cursor+1])){
+				subtract = 0;
+			}
+
+			value += (subtract==1)?-IntValueOf(numeral[cursor]):IntValueOf(numeral[cursor]);
+		}
+
+		cursor--;
+	}
+
+	return value;
+}
