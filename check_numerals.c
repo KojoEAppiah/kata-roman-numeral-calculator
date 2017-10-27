@@ -24,6 +24,13 @@ START_TEST(test_convert_X)
 }
 END_TEST
 
+START_TEST(test_convert_L)
+{
+    ck_assert_int_eq(50, IntValueOf('L'));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -37,6 +44,7 @@ Suite * numeral_suite(void)
     tcase_add_test(tc_core, test_convert_I);
     tcase_add_test(tc_core, test_convert_V);
     tcase_add_test(tc_core, test_convert_X);
+    tcase_add_test(tc_core, test_convert_L);
     suite_add_tcase(s, tc_core);
 
     return s;
