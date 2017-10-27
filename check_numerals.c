@@ -10,6 +10,13 @@ START_TEST(test_convert_I)
 }
 END_TEST
 
+START_TEST(test_convert_V)
+{
+    ck_assert_int_eq(5, IntValueOf('V'));
+ 
+}
+END_TEST
+
 Suite * numeral_suite(void)
 {
     Suite *s;
@@ -21,6 +28,7 @@ Suite * numeral_suite(void)
     tc_core = tcase_create("Core");
 
     tcase_add_test(tc_core, test_convert_I);
+    tcase_add_test(tc_core, test_convert_V);
     suite_add_tcase(s, tc_core);
 
     return s;
